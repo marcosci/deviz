@@ -4,3 +4,7 @@
 ^CODE_OF_CONDUCT\.md$
 ^README\.Rmd$
 ^codecov\.yml$
+^LICENSE\.md$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
