@@ -13,30 +13,28 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-ggmouse <- function(){
-
+ggmouse <- function() {
   library(readr)
   library(ggplot2)
 
   mouse <- read_table2("~/Downloads/mouse.txt",
-                       col_names = c("x", "y"))
+    col_names = c("x", "y")
+  )
 
   day <- Sys.Date()
 
-  ggplot(mouse, aes(x,y)) +
+  ggplot(mouse, aes(x, y)) +
     geom_path(color = "#fba298", alpha = .4) +
     theme_void() +
     expand_limits(x = 0, y = 0) +
     labs(title = day, x = NULL, y = NULL) +
     theme(
-      plot.title = element_text(size = 15,
-                                vjust = -2,
-                                hjust = -1,
-                                face = "bold"),
+      plot.title = element_text(
+        size = 15,
+        vjust = -2,
+        hjust = -1,
+        face = "bold"
+      ),
       plot.background = element_rect(fill = "#e6eaeb", color = "#e6eaeb"),
     )
-
-
 }
-
-
