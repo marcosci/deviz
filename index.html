@@ -72,22 +72,29 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of ggmouse from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggmouse"</span><span class="op">)</span></code></pre></div>
-<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<div id="prerequisities" class="section level3">
+<h3 class="hasAnchor">
+<a href="#prerequisities" class="anchor"></a>Prerequisities</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">brew</span> install xdotool</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">brew</span> install coreutils</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">defaults</span> write org.x.X11 enable_test_extensions -boolean true  </span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">defaults</span> write org.macosforge.xquartz.X11 enable_test_extensions -bool yes   </span></code></pre></div>
+</div>
+<div id="prerequisities-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#prerequisities-1" class="anchor"></a>Prerequisities</h3>
+<p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"marcosci/ggmouse"</span><span class="op">)</span></code></pre></div>
 </div>
+</div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date.</p>
-<p>You can also embed plots, for example:</p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub!</p>
+<ul>
+<li>Run <code>track_mouse</code> as job.</li>
+</ul>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
