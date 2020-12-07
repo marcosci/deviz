@@ -1,29 +1,16 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
+#' ggmouse
+#'
+#' @details
+#'
+#'
+#' @import ggplot2
+#' @export
 
-ggmouse <- function() {
-  library(readr)
-  library(ggplot2)
-
-  mouse <- read_table2("~/Downloads/mouse.txt",
-    col_names = c("x", "y")
-  )
+ggmouse <- function(track) {
 
   day <- Sys.Date()
 
-  ggplot(mouse, aes(x, y)) +
+  ggplot(track, aes(x, y)) +
     geom_path(color = "#fba298", alpha = .4) +
     theme_void() +
     expand_limits(x = 0, y = 0) +
