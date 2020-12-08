@@ -17,12 +17,12 @@ track_mouse <- function(time,
   if (system_info["sysname"] == "Darwin") {
     if (time == "inf") {
       system(paste0(
-        'secs=3600
-        endTime=$(( $(date +%s) + secs ))
+        'secs=', internal_time,
+        'endTime=$(( $(date +%s) + secs ))
 
         while [ $(date +%s) -lt $endTime ]; do
-        print "lala"
-        done'
+        xdotool getmouselocation | sed -E "s/ screen:0 window:[^ ]*|x:|y://g"  >>', file,
+        'done'
       ))
     } else {
 
