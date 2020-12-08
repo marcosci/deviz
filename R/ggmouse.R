@@ -42,19 +42,18 @@ ggmouse_dot <- function(track) {
     geom_point(
       data = track[1,],
       shape = 24,
-      size = 4.5,
+      size = 4,
       fill = "white",
       color = "black",
-      stroke = 1
+      stroke = 2
     ) +
     geom_point(
       data = track[nrow(track),],
       shape = 23,
-      size = 2.5,
-      size = 4.5,
+      size = 4,
       fill = "white",
       color = "black",
-      stroke = 1
+      stroke = 2
     ) +
     geom_point(
       aes(color = id),
@@ -67,16 +66,16 @@ ggmouse_dot <- function(track) {
       shape = 24,
       size = 4.5,
       fill = "transparent",
-      color = "black",
-      stroke = 1
+      color = "white",
+      stroke = .7
     ) +
     geom_point(
       data = track[nrow(track),],
       shape = 23,
       size = 4.5,
       fill = "transparent",
-      color = "black",
-      stroke = 1
+      color = "white",
+      stroke = .7
     ) +
     scale_x_continuous(expand = c(.01, .01)) +
     scale_y_continuous(expand = c(.01, .01)) +
