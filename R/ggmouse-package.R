@@ -9,6 +9,11 @@
 # nocov start
 "_PACKAGE"
 
-globalVariables(c("x", "y"))
+globalVariables(c("x",
+                  "y",
+                  "..count..",
+                  "r",
+                  "s",
+                  "id"))
 
 # nocov end
