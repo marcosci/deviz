@@ -47,20 +47,20 @@ visualize_mouse <- function(track, type = "tinygrid") {
       m <- max(track$y, na.rm = TRUE)
 
       p1 <- ggplot(track, aes(x, y)) +
-        geom_bin2d(
+        stat_bin_2d(
           aes(color = ..count..),
           bins = m
         ) +
         scale_x_continuous(expand = c(0, 0)) +
         scale_y_continuous(expand = c(0, 0)) +
-        rcartocolor::scale_color_carto_c(
-          palette = "DarkSunset",
-          guide = "none"
+        rcartocolor::scale_fill_carto_c(
+          palette = "SunsetDark",
+          guide   = "none"
         ) +
-        rcartocolor::scale_color_carto_c(
-          palette = "DarkSunset",
-          guide = "none"
-        ) +
+      rcartocolor::scale_color_carto_c(
+        palette = "SunsetDark",
+        guide   = "none"
+      ) +
         coord_fixed() +
         labs(title = day) +
         theme_void() +

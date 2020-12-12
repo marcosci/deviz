@@ -10,9 +10,6 @@
 #' The time format should be something of the following:
 #' \itemize{
 #' \item "3h23m04s"
-#' \item "3h23m"
-#' \item "23m04s"
-#' \item "23m"
 #' \item "inf"
 #' }
 #'
@@ -26,10 +23,11 @@ track_mouse <- function(time,
                         file) {
 
   #### check time format ----
-  tm_units <- strsplit(time, '([1-9])')
+  tm_units <- strsplit(time, '([0-9])')
   if(!any(c("h", "m", "s", "inf") %in% tm_units[[1]])) stop("You need to provide a correct time format.")
+  if(tm_units != "inf" & !all(c("h", "m", "s") %in% tm_units[[1]])) stop("You need to provide a correct time format.")
 
-  #### check file format ----
+   #### check file format ----
   file_format <- strsplit(file, "[.]")[[1]][2]
   if(file_format != "txt") stop("You need to provide a correct file format.")
 
@@ -45,7 +43,7 @@ track_mouse <- function(time,
 
   ## run under unix ----
   if (system_info["sysname"] != "Windows") {
-    if (time == "inf") {
+    if (time != "inf") {
       system(paste0(
         'secs=', internal_time,
         '; endTime=$(( $(date +%s) + secs )); while [ $(date +%s) -lt $endTime ]; do xdotool getmouselocation | sed -E "s/ screen:0 window:[^ ]*|x:|y://g"  >> ',
