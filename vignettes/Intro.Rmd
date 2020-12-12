@@ -1,0 +1,61 @@
+---
+title: "Intro iovis"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro iovis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ggmouse)
+```
+
+# Mouse data
+
+## Track mouse movement
+
+
+## Visualize mouse movement
+
+### Raw
+```{r}
+visualize_mouse(mouse_track, type = "raw")
+```
+
+### Tinygrid
+```{r}
+visualize_mouse(mouse_track, type = "tinygrid")
+```
+
+### Dot
+```{r}
+visualize_mouse(mouse_track, type = "dot")
+```
+
+### Heatmap
+```{r}
+visualize_mouse(mouse_track, type = "heatmap")
+```
+
+### Hex
+```{r}
+visualize_mouse(mouse_track, type = "hex")
+```
+
+### Grid
+```{r}
+visualize_mouse(mouse_track, type = "grid")
+```
+
+### Art
+```{r}
+visualize_mouse(mouse_track, type = "art")
+```
