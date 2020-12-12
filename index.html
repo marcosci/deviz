@@ -87,13 +87,12 @@
 <h3 class="hasAnchor">
 <a href="#prerequisities" class="anchor"></a>Prerequisities</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">brew</span> install xdotool</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">brew</span> install coreutils</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">defaults</span> write org.x.X11 enable_test_extensions -boolean true  </span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="ex">defaults</span> write org.macosforge.xquartz.X11 enable_test_extensions -bool yes   </span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">defaults</span> write org.x.X11 enable_test_extensions -boolean true  </span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">defaults</span> write org.macosforge.xquartz.X11 enable_test_extensions -bool yes   </span></code></pre></div>
 </div>
-<div id="prerequisities-1" class="section level3">
+<div id="package" class="section level3">
 <h3 class="hasAnchor">
-<a href="#prerequisities-1" class="anchor"></a>Prerequisities</h3>
+<a href="#package" class="anchor"></a>Package</h3>
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
@@ -103,9 +102,30 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<ul>
-<li>Run <code>track_mouse</code> as job.</li>
-</ul>
+<div id="mouse-movement-tracking" class="section level3">
+<h3 class="hasAnchor">
+<a href="#mouse-movement-tracking" class="anchor"></a>Mouse movement tracking</h3>
+<p>If you use RStudio, the most convienent way to track your mouse movement with <code>ggmouse</code> is to use the jobs pane. Just create somewhere a file like the following:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">ggmouse</span><span class="op">)</span>
+
+<span class="va">mouse_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempfile</a></span><span class="op">(</span>fileext <span class="op">=</span> <span class="st">".txt"</span><span class="op">)</span>
+<span class="fu"><a href="reference/track_mouse.html">track_mouse</a></span><span class="op">(</span><span class="st">"00h00m90s"</span>, <span class="va">mouse_file</span><span class="op">)</span>
+
+<span class="va">momove</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/import_mouse.html">import_mouse</a></span><span class="op">(</span><span class="va">mouse_file</span><span class="op">)</span>
+
+<span class="fu"><a href="reference/visualize_mouse.html">visualize_mouse</a></span><span class="op">(</span><span class="va">momove</span>, <span class="st">"tinygrid"</span><span class="op">)</span></code></pre></div>
+<p>… and specify everything in there that is of interest to you. The time, maybe you don’t want to save the coordinates in a tempfile or you don’t want to immediately plot the data.</p>
+<p>Then run the job with the following settings:</p>
+<p>— IMAGE —-</p>
+</div>
+<div id="visualize-mouse-movement" class="section level3">
+<h3 class="hasAnchor">
+<a href="#visualize-mouse-movement" class="anchor"></a>Visualize mouse movement</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/visualize_mouse.html">visualize_mouse</a></span><span class="op">(</span><span class="va">mouse_track</span>, type <span class="op">=</span> <span class="st">"dot"</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
+</div>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
