@@ -8,17 +8,18 @@
 #' the R shell. See our README for a walkthrough of this.
 #'
 #' The time format should be something of the following:
+#' \itemize{
 #' \item "3h23m04s"
 #' \item "3h23m"
 #' \item "23m04s"
 #' \item "23m"
 #' \item "inf"
+#' }
 #'
-#' @return
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' track_mouse("0h10m00s", "mouse_position.txt")
 #' }
 track_mouse <- function(time,

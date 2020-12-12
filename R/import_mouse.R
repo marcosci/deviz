@@ -2,11 +2,10 @@
 #'
 #' @param file Path and filename, file format must currently be ".txt"
 #'
-#' @return
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' import_mouse("data/test.txt")
 #' }
 import_mouse <- function(file) {

@@ -1,18 +1,18 @@
 #' track_mouse
 #'
-#' @param time Time format, either "99h99m99s" or "inf", see details
-#' @param file Path and filename, file format must currently be ".txt"
+#' @param track Time format, either "99h99m99s" or "inf", see details
+#' @param type Path and filename, file format must currently be ".txt"
 #'
 #' @details
 #' visualize_mouse types
 #'
-#' @return
+#' @return A ggplot2 object
 #' @export
 #'
 #' @import ggplot2
 #'
 #' @examples
-#' visualize_mouse(mouse, "tinygrid")
+#' visualize_mouse(mouse_track, "tinygrid")
 #'
 visualize_mouse <- function(track, type = "tinygrid") {
 
@@ -20,7 +20,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
 
   # type raw ----
   if (type == "raw"){
-    ggplot(track, aes(x, y)) +
+    p1 <- ggplot(track, aes(x, y)) +
       geom_path(color = "#fba29866") +
       scale_x_continuous(expand = c(0, 0)) +
       scale_y_continuous(expand = c(0, 0)) +
@@ -46,7 +46,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
 
       m <- max(track$y, na.rm = TRUE)
 
-      ggplot(track, aes(x, y)) +
+      p1 <- ggplot(track, aes(x, y)) +
         geom_bin2d(
           aes(color = ..count..),
           bins = m
@@ -83,7 +83,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
 
     track$id <- 1:nrow(track)
 
-    ggplot(track, aes(x, y)) +
+    p1 <- ggplot(track, aes(x, y)) +
       geom_point(
         data = track[1,],
         shape = 24,
@@ -148,7 +148,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
 
   # type heatmap ----
   if (type == "heatmap"){
-    ggplot(track, aes(x, y)) +
+    p1 <- ggplot(track, aes(x, y)) +
       geom_density_2d_filled() +
       scale_x_continuous(expand = c(0, 0)) +
       scale_y_continuous(expand = c(0, 0)) +
@@ -175,7 +175,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
   # type hex ----
   if (type == "hex"){
 
-    ggplot(track, aes(x, y)) +
+    p1 <- ggplot(track, aes(x, y)) +
       geom_hex(aes(color = ..count..)) +
       scale_x_continuous(expand = c(.025, .025)) +
       scale_y_continuous(expand = c(.025, .025)) +
@@ -206,7 +206,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
 
   # type grid ----
   if (type == "grid"){
-    ggplot(track, aes(x, y)) +
+    p1 <- ggplot(track, aes(x, y)) +
       geom_bin2d(
         aes(color = ..count..),
         bins = 50
@@ -253,7 +253,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
       c = factor(sample(1:4, n, replace = TRUE))
     )
 
-    ggplot(track, aes(x, y)) +
+    p1 <- ggplot(track, aes(x, y)) +
       geom_path(color = "grey60") +
       geom_point(
         data = art,
@@ -278,4 +278,5 @@ visualize_mouse <- function(track, type = "tinygrid") {
 
   }
 
+  return(p1)
 }
