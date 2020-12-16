@@ -60,7 +60,9 @@ want to immediately plot the data.
 
 Then run the job with the following settings:
 
-— IMAGE —-
+<center>
+<img src="https://raw.githubusercontent.com/marcosci/ggmouse/main/vignettes/job.png?token=ACS4PPQQKRGDB6EMRG3UDRC73ZGKK" style="width:60%" />
+</center>
 
 ### Visualize mouse movement
 

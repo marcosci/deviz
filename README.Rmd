@@ -64,15 +64,15 @@ visualize_mouse(momove, "tinygrid")
 
 Then run the job with the following settings:
 
---- IMAGE ----
+<center>
+ <img src="https://raw.githubusercontent.com/marcosci/ggmouse/main/vignettes/job.png?token=ACS4PPQQKRGDB6EMRG3UDRC73ZGKK" style="width:60%" />
+</center>
 
 ### Visualize mouse movement
 
 ```{r}
 visualize_mouse(mouse_track, type = "dot")
 ```
-
-
 
 ## Code of Conduct
 
