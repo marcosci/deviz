@@ -27,5 +27,6 @@ RoxygenNote: 7.1.1
 Imports: 
     ggplot2,
     rcartocolor,
-    scico
+    scico,
+    rstudioapi
 VignetteBuilder: knitr
