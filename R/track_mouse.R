@@ -50,7 +50,7 @@ track_mouse <- function(time,
       if (time != "inf") {
         .run_time(internal_time, file)
       } else {
-        .run_inf(file)
+        .run_file(file)
       }
     }
   } else {
@@ -58,7 +58,7 @@ track_mouse <- function(time,
     tmp_rscript <- tempfile(fileext = ".R")
 
     cat("ggmouse::track_mouse('", time,"', '", file, "')\n", file = tmp_rscript, sep = "", append = TRUE)
-    cat("momove <- ggmouse::import_mouse('", file, "')", file = tmp_rscriptt, sep = "", append = TRUE)
+    cat("momove <- ggmouse::import_mouse('", file, "')", file = tmp_rscript, sep = "", append = TRUE)
 
     rstudioapi::jobRunScript(tmp_rscript, exportEnv = "R_GlobalEnv")
 
@@ -66,9 +66,6 @@ track_mouse <- function(time,
 
 
 }
-
-job.info$id # returns the Studio internal job id
-job.info$ps # returns the OS process id
 
 .run_time <- function(internal_time, file){
   system(paste0(
