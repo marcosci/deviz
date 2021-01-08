@@ -12,8 +12,8 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/paper/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -96,6 +96,9 @@
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="../articles/Intro.html">Intro iovis</a>
+    </li>
+    <li>
+      <a href="../articles/Tracking.html">Tracking</a>
     </li>
   </ul>
 </li>
@@ -127,18 +130,18 @@
     <p>track_mouse</p>
     </div>
 
-    <pre class="usage"><span class='fu'>track_mouse</span><span class='op'>(</span><span class='va'>time</span>, <span class='va'>file</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>track_mouse</span><span class='op'>(</span><span class='va'>time</span>, as_job <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>time</th>
-      <td><p>Time format, either "99h99m99s" or "inf", see details</p></td>
+      <td><p>Time format, "99h99m99s"</p></td>
     </tr>
     <tr>
-      <th>file</th>
-      <td><p>Path and filename, file format must currently be ".txt"</p></td>
+      <th>as_job</th>
+      <td><p>Should the function be started as RStudio Job? (logical)</p></td>
     </tr>
     </table>
 
@@ -146,11 +149,7 @@
 
     <p>track_mouse is a function that is best run as a background job, since it blocks
 the R shell. See our README for a walkthrough of this.</p>
-<p>The time format should be something of the following:</p><ul>
-<li><p>"3h23m04s"</p></li>
-<li><p>"inf"</p></li>
-</ul>
-
+<p>If you run</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
