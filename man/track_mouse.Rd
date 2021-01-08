@@ -4,12 +4,10 @@
 \alias{track_mouse}
 \title{track_mouse}
 \usage{
-track_mouse(time, file, as_job = FALSE)
+track_mouse(time, as_job = FALSE)
 }
 \arguments{
-\item{time}{Time format, either "99h99m99s" or "inf", see details}
-
-\item{file}{Path and filename, file format must currently be ".txt"}
+\item{time}{Time format, "99h99m99s"}
 
 \item{as_job}{Should the function be started as RStudio Job? (logical)}
 }
@@ -19,12 +17,6 @@ track_mouse
 \details{
 track_mouse is a function that is best run as a background job, since it blocks
 the R shell. See our README for a walkthrough of this.
-
-The time format should be something of the following:
-\itemize{
-\item "3h23m04s"
-\item "inf"
-}
 
 If you run
 }

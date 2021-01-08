@@ -19,6 +19,16 @@ The goal of ggmouse is to …
 
 ### Prerequisities
 
+### Linux
+
+``` bash
+sudo apt-get install xdotool #ubuntu
+sudo dnf install xdotool     #fedora
+sudo pacman -S xdotool       #arch
+```
+
+### MacOS
+
 ``` bash
 brew install xdotool
 defaults write org.x.X11 enable_test_extensions -boolean true  
@@ -46,10 +56,7 @@ like the following:
 ``` r
 library(ggmouse)
 
-mouse_file <- tempfile(fileext = ".txt")
-track_mouse("00h00m90s", mouse_file)
-
-momove <- import_mouse(mouse_file)
+track_mouse("00h00m90s")
 
 visualize_mouse(momove, "tinygrid")
 ```
@@ -69,8 +76,6 @@ Then run the job with the following settings:
 ``` r
 visualize_mouse(mouse_track, type = "dot")
 ```
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ## Code of Conduct
 

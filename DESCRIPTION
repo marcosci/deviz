@@ -28,5 +28,9 @@ Imports:
     ggplot2,
     rcartocolor,
     scico,
-    rstudioapi
+    rstudioapi,
+    lubridate,
+    purrr,
+    tibble,
+    reticulate
 VignetteBuilder: knitr
