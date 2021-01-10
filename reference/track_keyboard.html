@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ggmouse</title>
+<title>track_keyboard — track_keyboard • ggmouse</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="track_keyboard — track_keyboard" />
+<meta property="og:description" content="track_keyboard" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,72 +119,44 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>track_keyboard</h1>
+    
+    <div class="hidden name"><code>track_keyboard.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>track_keyboard</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>track_keyboard</span><span class='op'>(</span><span class='va'>time</span>, as_job <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="ggmouse.html">ggmouse</a></code> </p>
-        </td>
-        <td><p>ggmouse</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="key_df.html">key_df</a></code> </p>
-        </td>
-        <td><p>Keyboard stroke data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mouse_df.html">mouse_df</a></code> </p>
-        </td>
-        <td><p>Computer mouse movement data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="track_keyboard.html">track_keyboard()</a></code> </p>
-        </td>
-        <td><p>track_keyboard</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="track_mouse.html">track_mouse()</a></code> </p>
-        </td>
-        <td><p>track_mouse</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="visualize_mouse.html">visualize_mouse()</a></code> </p>
-        </td>
-        <td><p>track_mouse</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>time</th>
+      <td><p>Time format, "99h99m99s"</p></td>
+    </tr>
+    <tr>
+      <th>as_job</th>
+      <td><p>Should the function be started as RStudio Job? (logical)</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>track_keyboard is a function that is best run as a background job, since it blocks
+the R shell. See our README for a walkthrough of this.</p>
+<p>If you run</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'><a href='track_mouse.html'>track_mouse</a></span><span class='op'>(</span><span class='st'>"0h10m00s"</span>, <span class='st'>"mouse_position.txt"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
