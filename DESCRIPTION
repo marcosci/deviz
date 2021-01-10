@@ -43,3 +43,5 @@ Config/reticulate:
     )
   )
 VignetteBuilder: knitr
+URL: https://github.com/marcosci/ggmouse
+BugReports: https://github.com/marcosci/ggmouse/issues
