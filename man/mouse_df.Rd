@@ -12,6 +12,7 @@ A data frame with 14,251 rows and 8 variables:
   \item{dx}{Scrollevent, Movement on the x axis}
   \item{dy}{Scrollevent, Movement on the y axis}
   \item{pressed}{TRUE, where the button was pressed and False where the button was released}
+  \item{type}{Type of mouse event}
   \item{x}{Coordinate on x-axis of the screen}
   \item{y}{Coordinate on y-axis of the screen}
 }

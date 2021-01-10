@@ -9,8 +9,7 @@
 coverage](https://codecov.io/gh/marcosci/ggmouse/branch/master/graph/badge.svg)](https://codecov.io/gh/marcosci/ggmouse?branch=master)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![R build
-status](https://github.com/marcosci/ggmouse/workflows/R-CMD-check/badge.svg)](https://github.com/marcosci/ggmouse/actions)
+[![R-CMD-check](https://github.com/marcosci/ggmouse/workflows/R-CMD-check/badge.svg)](https://github.com/marcosci/ggmouse/actions)
 <!-- badges: end -->
 
 The goal of ggmouse is to …
