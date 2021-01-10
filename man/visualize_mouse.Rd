@@ -21,6 +21,6 @@ track_mouse
 visualize_mouse types
 }
 \examples{
-visualize_mouse(mouse_track, "tinygrid")
+visualize_mouse(mouse_df, "tinygrid")
 
 }

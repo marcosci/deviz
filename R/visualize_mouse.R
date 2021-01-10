@@ -83,8 +83,7 @@ visualize_mouse <- function(track, type = "tinygrid") {
   # type dot ----
   if (type == "dot"){
 
-    track$i
-    gd <- 1:nrow(track)
+    track$id <- 1:nrow(track)
 
     p1 <- ggplot(track, aes(x, y)) +
       geom_point(

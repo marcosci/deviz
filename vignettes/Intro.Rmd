@@ -27,35 +27,35 @@ library(ggmouse)
 
 ### Raw
 ```{r}
-visualize_mouse(mouse_track, type = "raw")
+visualize_mouse(mouse_df, type = "raw")
 ```
 
 ### Tinygrid
 ```{r}
-visualize_mouse(mouse_track, type = "tinygrid")
+visualize_mouse(mouse_df, type = "tinygrid")
 ```
 
 ### Dot
 ```{r}
-visualize_mouse(mouse_track, type = "dot")
+visualize_mouse(mouse_df, type = "dot")
 ```
 
 ### Heatmap
 ```{r}
-visualize_mouse(mouse_track, type = "heatmap")
+visualize_mouse(mouse_df, type = "heatmap")
 ```
 
 ### Hex
 ```{r}
-visualize_mouse(mouse_track, type = "hex")
+visualize_mouse(mouse_df, type = "hex")
 ```
 
 ### Grid
 ```{r}
-visualize_mouse(mouse_track, type = "grid")
+visualize_mouse(mouse_df, type = "grid")
 ```
 
 ### Art
 ```{r}
-visualize_mouse(mouse_track, type = "art")
+visualize_mouse(mouse_df, type = "art")
 ```

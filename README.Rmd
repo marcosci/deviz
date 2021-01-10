@@ -76,7 +76,7 @@ Then run the job with the following settings:
 ### Visualize mouse movement
 
 ```r
-visualize_mouse(mouse_track, type = "dot")
+visualize_mouse(mouse_df, type = "dot")
 ```
 
 ## Code of Conduct

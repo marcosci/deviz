@@ -17,7 +17,7 @@ Description: Tracks and visualizes computer mouse movement.
 License: MIT + file LICENSE
 SystemRequirements: Python (>= 3.6.0)
 Depends: 
-    R (>= 3.3.0)
+    R (>= 3.5.0)
 Suggests: 
     covr,
     knitr,

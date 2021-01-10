@@ -60,7 +60,9 @@ with keyboard.Events() as events:
                    date    = lubridate::ymd(events[[2]]) + lubridate::hms(events[[3]]))
   })
 
-  key_events <-  key_events %>% dplyr::filter(type == "Press")
+  key_events <-  key_events %>%
+    dplyr::filter(type == "Press") %>%
+    dplyr::select(-type)
 
   ## run as job ----
   if (as_job) {
