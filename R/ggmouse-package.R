@@ -13,6 +13,7 @@ globalVariables(c("x",
                   "..count..",
                   "r",
                   "s",
-                  "id"))
+                  "id",
+                  "type"))
 
 # nocov end

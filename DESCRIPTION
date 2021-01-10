@@ -15,6 +15,7 @@ Authors@R:
              role = "aut"))
 Description: Tracks and visualizes computer mouse movement.
 License: MIT + file LICENSE
+SystemRequirements: Python (>= 3.6.0)
 Depends: 
     R (>= 3.3.0)
 Suggests: 
@@ -32,5 +33,13 @@ Imports:
     lubridate,
     purrr,
     tibble,
-    reticulate
+    reticulate,
+    magrittr,
+    dplyr
+Config/reticulate:
+  list(
+    packages = list(
+      list(package = "pynput", pip = TRUE)
+    )
+  )
 VignetteBuilder: knitr

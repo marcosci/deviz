@@ -6,7 +6,12 @@
 #'
 #' @format A data frame with 3703498 rows and 2 variables:
 #' \describe{
+#'   \item{button}{Left or right button on the mouse}
+#'   \item{date}{Date and time of event}
+#'   \item{dx}{Scrollevent, Movement on the x axis}
+#'   \item{dy}{Scrollevent, Movement on the y axis}
+#'   \item{pressed}{TRUE, where the button was pressed and False where the button was released}
 #'   \item{x}{Coordinate on x-axis of the screen}
 #'   \item{y}{Coordinate on y-axis of the screen}
 #' }
-"mouse_track"
+"mouse_df"

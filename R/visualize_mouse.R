@@ -12,11 +12,13 @@
 #' @import ggplot2
 #'
 #' @examples
-#' visualize_mouse(mouse_track, "tinygrid")
+#' visualize_mouse(mouse_df, "tinygrid")
 #'
 visualize_mouse <- function(track, type = "tinygrid") {
 
-  day <- Sys.Date()
+  day <- lubridate::format_ISO8601(track$date, precision = "ymd")
+
+  track <- track %>% dplyr::filter(type == "Move")
 
   # type raw ----
   if (type == "raw"){
@@ -81,7 +83,8 @@ visualize_mouse <- function(track, type = "tinygrid") {
   # type dot ----
   if (type == "dot"){
 
-    track$id <- 1:nrow(track)
+    track$i
+    gd <- 1:nrow(track)
 
     p1 <- ggplot(track, aes(x, y)) +
       geom_point(
