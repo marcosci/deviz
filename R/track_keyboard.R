@@ -68,7 +68,7 @@ with keyboard.Events() as events:
   if (as_job) {
 
     tmp_rscript <- tempfile(fileext = ".R")
-    cat(paste0("key_df <- ggmouse::track_keyboard('", time, "')"), file = tmp_rscript)
+    cat(paste0("key_df <- devis::track_keyboard('", time, "')"), file = tmp_rscript)
     rstudioapi::jobRunScript(tmp_rscript, exportEnv = "R_GlobalEnv")
 
   }

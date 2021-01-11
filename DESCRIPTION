@@ -1,5 +1,5 @@
 Type: Package
-Package: ggmouse
+Package: devis
 Title: Track and visualize mouse movement
 Version: 0.1.0
 Authors@R:
@@ -43,5 +43,5 @@ Config/reticulate:
     )
   )
 VignetteBuilder: knitr
-URL: https://github.com/marcosci/ggmouse
-BugReports: https://github.com/marcosci/ggmouse/issues
+URL: https://github.com/marcosci/devis
+BugReports: https://github.com/marcosci/devis/issues

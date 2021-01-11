@@ -1,9 +1,9 @@
-#' @title ggmouse
+#' @title devis
 #'
 #' @description
 #' Tracks and visualizes mouse movement data. blablabla
 #'
-#' @name ggmouse
+#' @name devis
 #' @docType package
 # nocov start
 "_PACKAGE"

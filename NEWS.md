@@ -1,3 +1,3 @@
-# ggmouse 0.1.0
+# devis 0.1.0
 
-* First release of ggmouse.
+* First release of devis.

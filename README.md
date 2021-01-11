@@ -1,18 +1,18 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggmouse
+# devis
 
 <!-- badges: start -->
 
 [![Codecov test
-coverage](https://codecov.io/gh/marcosci/ggmouse/branch/master/graph/badge.svg)](https://codecov.io/gh/marcosci/ggmouse?branch=master)
+coverage](https://codecov.io/gh/marcosci/devis/branch/master/graph/badge.svg)](https://codecov.io/gh/marcosci/devis?branch=master)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![R-CMD-check](https://github.com/marcosci/ggmouse/workflows/R-CMD-check/badge.svg)](https://github.com/marcosci/ggmouse/actions)
+[![R-CMD-check](https://github.com/marcosci/devis/workflows/R-CMD-check/badge.svg)](https://github.com/marcosci/devis/actions)
 <!-- badges: end -->
 
-The goal of ggmouse is to …
+The goal of devis is to …
 
 ## Installation
 
@@ -41,7 +41,7 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("marcosci/ggmouse")
+devtools::install_github("marcosci/devis")
 ```
 
 ## Example
@@ -49,11 +49,11 @@ devtools::install_github("marcosci/ggmouse")
 ### Mouse movement tracking
 
 If you use RStudio, the most convienent way to track your mouse movement
-with `ggmouse` is to use the jobs pane. Just create somewhere a file
+with `devis` is to use the jobs pane. Just create somewhere a file
 like the following:
 
 ``` r
-library(ggmouse)
+library(devis)
 
 track_mouse("00h00m90s")
 
@@ -67,7 +67,7 @@ want to immediately plot the data.
 Then run the job with the following settings:
 
 <center>
-<img src="https://raw.githubusercontent.com/marcosci/ggmouse/main/vignettes/job.png?token=ACS4PPQQKRGDB6EMRG3UDRC73ZGKK" style="width:60%" />
+<img src="https://raw.githubusercontent.com/marcosci/devis/main/vignettes/job.png?token=ACS4PPQQKRGDB6EMRG3UDRC73ZGKK" style="width:60%" />
 </center>
 
 ### Visualize mouse movement
@@ -78,7 +78,7 @@ visualize_mouse(mouse_df, type = "dot")
 
 ## Code of Conduct
 
-Please note that the ggmouse project is released with a [Contributor
+Please note that the devis project is released with a [Contributor
 Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
