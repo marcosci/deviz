@@ -18,7 +18,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 deviz allows to track computer input device tracking and the
 vizualisation of the tracked data. deviz wraps the the python package
-![`pynput`](https://pynput.readthedocs.io/en/latest/index.html), which
+![pynput](https://pynput.readthedocs.io/en/latest/index.html), which
 allows us to collect the mouse movement and keyboard strokes data.
 
 ## Installation
