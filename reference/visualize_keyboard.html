@@ -139,7 +139,12 @@
   <span class='va'>keys</span>,
   ggkeyboard <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/ggkeyboard/man/tkl.html'>tkl</a></span>,
   palette <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggkeyboard/man/keyboard_palette.html'>keyboard_palette</a></span><span class='op'>(</span><span class='st'>"magic"</span><span class='op'>)</span>,
-  colour <span class='op'>=</span> <span class='st'>"#cd5c5c"</span>,
+  layout <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ansi"</span>, <span class='st'>"iso"</span><span class='op'>)</span>,
+  font_family <span class='op'>=</span> <span class='st'>"Arial Unicode MS"</span>,
+  font_size <span class='op'>=</span> <span class='fl'>3</span>,
+  adjust_text_colour <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  measurements <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggkeyboard/man/keyboard_measurements.html'>keyboard_measurements</a></span><span class='op'>(</span><span class='st'>"default"</span><span class='op'>)</span>,
+  colour <span class='op'>=</span> <span class='st'>"#e5e1e1"</span>,
   size <span class='op'>=</span> <span class='fl'>1</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
@@ -156,8 +161,28 @@
       <td><p>An input keyboard from <code>ggkeyboard</code>.</p></td>
     </tr>
     <tr>
-      <th>ggkeyboard</th>
-      <td><p>An input keyboard from <code>ggkeyboard</code>.</p></td>
+      <th>palette</th>
+      <td><p>Colour palette. Defaults to <code>keyboard_palette("pastel")</code>. To use a custom palette, create a vector with the names described in <code>keyboard_palette</code>.</p></td>
+    </tr>
+    <tr>
+      <th>layout</th>
+      <td><p>Keyboard layout - one of "ansi" or "iso". Defaults to "ansi".</p></td>
+    </tr>
+    <tr>
+      <th>font_family</th>
+      <td><p>Font used. Defaults to "Arial Unicode MS". See the <code>extrafont</code> package for using fonts in ggplot2.</p></td>
+    </tr>
+    <tr>
+      <th>font_size</th>
+      <td><p>Base font size. Defaults to 3.</p></td>
+    </tr>
+    <tr>
+      <th>adjust_text_colour</th>
+      <td><p>Whether to lighten the text colour on dark keys. Defaults to TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>measurements</th>
+      <td><p>Measurements of various aspects of the keyboard key height and width, gaps between keys and rows, etc. See <code>keyboard_measurements</code>.</p></td>
     </tr>
     <tr>
       <th>colour</th>
@@ -170,10 +195,6 @@
     <tr>
       <th>...</th>
       <td><p>Additional options, passed to <code>geom_rect</code>.</p></td>
-    </tr>
-    <tr>
-      <th>fill</th>
-      <td><p>Highlight fill colour.</p></td>
     </tr>
     </table>
 
