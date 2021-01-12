@@ -12,29 +12,16 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/marcosci/deviz/workflows/R-CMD-check/badge.svg)](https://github.com/marcosci/deviz/actions)
 <!-- badges: end -->
 
-The goal of deviz is to …
+/dɪˈvaɪz/ (device + vizualisation)
+
+## Input device tracking and visualization in R
+
+deviz allows to track computer input device tracking and the
+vizualisation of the tracked data. deviz wraps the the python package
+![`pynput`](https://pynput.readthedocs.io/en/latest/index.html), which
+allows us to collect the mouse movement and keyboard strokes data.
 
 ## Installation
-
-### Prerequisities
-
-### Linux
-
-``` bash
-sudo apt-get install xdotool #ubuntu
-sudo dnf install xdotool     #fedora
-sudo pacman -S xdotool       #arch
-```
-
-### MacOS
-
-``` bash
-brew install xdotool
-defaults write org.x.X11 enable_test_extensions -boolean true  
-defaults write org.macosforge.xquartz.X11 enable_test_extensions -bool yes   
-```
-
-### Package
 
 You can install the development version from
 [GitHub](https://github.com/) with:
@@ -46,29 +33,45 @@ devtools::install_github("marcosci/deviz")
 
 ## Example
 
-### Mouse movement tracking
+### Mouse
 
-If you use RStudio, the most convienent way to track your mouse movement
-with `deviz` is to use the jobs pane. Just create somewhere a file
-like the following:
+#### Mouse movement tracking
+
+If you want to track your mouse, just run:
 
 ``` r
 library(deviz)
-
-track_mouse("00h00m90s")
-
-visualize_mouse(momove, "tinygrid")
+mouse_df <- track_mouse("00h00m90s")
 ```
 
-… and specify everything in there that is of interest to you. The time,
-maybe you don’t want to save the coordinates in a tempfile or you don’t
-want to immediately plot the data.
+… this will track your mouse for 90 seconds, but also block your R
+console. If you use RStudio, the most convienent way to track your mouse
+movement with `deviz` is to run
+`track_mouse("00h00m90s", as_job = TRUE)`. This launches the function as
+an RStudio job, which at its end returns a `mouse_df` object with the
+tracked data.
 
-Then run the job with the following settings:
+The returned contains information about the type of mouse input
+(movement, click, scroll) and further information about the specific
+event:
 
-<center>
-<img src="https://raw.githubusercontent.com/marcosci/deviz/main/vignettes/job.png?token=ACS4PPQQKRGDB6EMRG3UDRC73ZGKK" style="width:60%" />
-</center>
+``` r
+mouse_df
+#> # A tibble: 14,251 x 8
+#>    type      x     y button pressed dx    dy    date               
+#>    <chr> <dbl> <dbl> <chr>  <chr>   <chr> <chr> <dttm>             
+#>  1 Click  107. 1047. left   False   <NA>  <NA>  2021-01-10 14:45:46
+#>  2 Move   108. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  3 Move   108. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  4 Move   109. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  5 Move   110. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  6 Move   110. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  7 Move   111. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  8 Move   113. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#>  9 Move   114. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#> 10 Move   115. 1047. <NA>   <NA>    <NA>  <NA>  2021-01-10 14:45:47
+#> # … with 14,241 more rows
+```
 
 ### Visualize mouse movement
 
@@ -76,9 +79,33 @@ Then run the job with the following settings:
 visualize_mouse(mouse_df, type = "dot")
 ```
 
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+### Keyboard
+
+#### Keyboard strokes tracking
+
+Equivalent to the way we can track mouse movement, we can track the key
+strokes in a given time interval:
+
+``` r
+library(deviz)
+key_df <- track_keyboard("00h00m90s")
+```
+
+There is also the possibility to run this command as an RStudio Job.
+
+### Visualize mouse movement
+
+``` r
+visualize_keyboard(key_df)
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
 ## Code of Conduct
 
-Please note that the deviz project is released with a [Contributor
-Code of
+Please note that the deviz project is released with a [Contributor Code
+of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
