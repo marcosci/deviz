@@ -64,6 +64,11 @@ with keyboard.Events() as events:
     dplyr::filter(type == "Press") %>%
     dplyr::select(-type)
 
+  key_events$key <- gsub("'", "", key_events$key)
+  key_events$key <- gsub("Key.", "", key_events$key)
+
+  key_events$key <- key_events$key %>% toupper()
+
   ## run as job ----
   if (as_job) {
 

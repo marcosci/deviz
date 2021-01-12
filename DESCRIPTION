@@ -35,7 +35,10 @@ Imports:
     tibble,
     reticulate,
     magrittr,
-    dplyr
+    dplyr,
+    ggnewscale
+Remotes:  
+    sharlagelfand/ggkeyboard
 Config/reticulate:
   list(
     packages = list(
