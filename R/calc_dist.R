@@ -3,7 +3,7 @@
 #' @param file Mouse track containing x any y coordinates#'
 #'
 #' @details
-#' Calculate euclidean distance between track points
+#' Calculate distance in pixels between track points
 #'
 #' @return mouse track including distance#'
 #' @export
