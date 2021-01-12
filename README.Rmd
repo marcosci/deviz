@@ -26,8 +26,8 @@ library(deviz)
 
 ## Input device tracking and visualization in R
 
-deviz allows to track computer input device tracking and the vizualisation of the tracked data.
-deviz wraps the the python package ![pynput](https://pynput.readthedocs.io/en/latest/index.html), which allows us to collect the mouse movement and keyboard strokes data.
+deviz allows to track computer input devices and the visualization of the tracked data.
+deviz wraps the the python package [`pynput`](https://pynput.readthedocs.io/en/latest/index.html), which allows us to collect the mouse movement and keyboard strokes data.
 
 ## Installation
 
@@ -79,7 +79,7 @@ There is also the possibility to run this command as an RStudio Job.
 
 ### Visualize mouse movement
 
-```{r}
+```{r, fig.retina = 4, dpi = 600}
 visualize_keyboard(key_df)
 ```
 
