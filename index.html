@@ -46,21 +46,6 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="articles/Intro.html">Intro iovis</a>
-    </li>
-    <li>
-      <a href="articles/Tracking.html">Tracking</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
@@ -89,61 +74,79 @@
 <a href="#deviz" class="anchor"></a>deviz</h1></div>
 <!-- badges: start -->
 
-<p>The goal of deviz is to …</p>
+<p>/dɪˈvaɪz/ (device + vizualisation)</p>
+<div id="input-device-tracking-and-visualization-in-r" class="section level2">
+<h2 class="hasAnchor">
+<a href="#input-device-tracking-and-visualization-in-r" class="anchor"></a>Input device tracking and visualization in R</h2>
+<p>deviz allows to track computer input device tracking and the vizualisation of the tracked data. deviz wraps the the python package <embed src="https://pynput.readthedocs.io/en/latest/index.html"></embed>, which allows us to collect the mouse movement and keyboard strokes data.</p>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div id="prerequisities" class="section level3">
-<h3 class="hasAnchor">
-<a href="#prerequisities" class="anchor"></a>Prerequisities</h3>
-</div>
-<div id="linux" class="section level3">
-<h3 class="hasAnchor">
-<a href="#linux" class="anchor"></a>Linux</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">sudo</span> apt-get install xdotool <span class="co">#ubuntu</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">sudo</span> dnf install xdotool     <span class="co">#fedora</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">sudo</span> pacman -S xdotool       <span class="co">#arch</span></span></code></pre></div>
-</div>
-<div id="macos" class="section level3">
-<h3 class="hasAnchor">
-<a href="#macos" class="anchor"></a>MacOS</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">brew</span> install xdotool</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">defaults</span> write org.x.X11 enable_test_extensions -boolean true  </span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">defaults</span> write org.macosforge.xquartz.X11 enable_test_extensions -bool yes   </span></code></pre></div>
-</div>
-<div id="package" class="section level3">
-<h3 class="hasAnchor">
-<a href="#package" class="anchor"></a>Package</h3>
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"marcosci/deviz"</span><span class="op">)</span></code></pre></div>
-</div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<div id="mouse-movement-tracking" class="section level3">
+<div id="mouse" class="section level3">
 <h3 class="hasAnchor">
-<a href="#mouse-movement-tracking" class="anchor"></a>Mouse movement tracking</h3>
-<p>If you use RStudio, the most convienent way to track your mouse movement with <code>deviz</code> is to use the jobs pane. Just create somewhere a file like the following:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<a href="#mouse" class="anchor"></a>Mouse</h3>
+<div id="mouse-movement-tracking" class="section level4">
+<h4 class="hasAnchor">
+<a href="#mouse-movement-tracking" class="anchor"></a>Mouse movement tracking</h4>
+<p>If you want to track your mouse, just run:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/marcosci/deviz">deviz</a></span><span class="op">)</span>
-
-<span class="fu"><a href="reference/track_mouse.html">track_mouse</a></span><span class="op">(</span><span class="st">"00h00m90s"</span><span class="op">)</span>
-
-<span class="fu"><a href="reference/visualize_mouse.html">visualize_mouse</a></span><span class="op">(</span><span class="va">momove</span>, <span class="st">"tinygrid"</span><span class="op">)</span></code></pre></div>
-<p>… and specify everything in there that is of interest to you. The time, maybe you don’t want to save the coordinates in a tempfile or you don’t want to immediately plot the data.</p>
-<p>Then run the job with the following settings:</p>
-<center>
-<img src="https://raw.githubusercontent.com/marcosci/deviz/main/vignettes/job.png?token=ACS4PPQQKRGDB6EMRG3UDRC73ZGKK" style="width:60%">
-</center>
+<span class="va">mouse_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/track_mouse.html">track_mouse</a></span><span class="op">(</span><span class="st">"00h00m90s"</span><span class="op">)</span></code></pre></div>
+<p>… this will track your mouse for 90 seconds, but also block your R console. If you use RStudio, the most convienent way to track your mouse movement with <code>deviz</code> is to run <code><a href="reference/track_mouse.html">track_mouse("00h00m90s", as_job = TRUE)</a></code>. This launches the function as an RStudio job, which at its end returns a <code>mouse_df</code> object with the tracked data.</p>
+<p>The returned contains information about the type of mouse input (movement, click, scroll) and further information about the specific event:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mouse_df</span>
+<span class="co">#&gt; # A tibble: 14,251 x 8</span>
+<span class="co">#&gt;    type      x     y button pressed dx    dy    date               </span>
+<span class="co">#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dttm&gt;             </span>
+<span class="co">#&gt;  1 Click  107. 1047. left   False   &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:46</span>
+<span class="co">#&gt;  2 Move   108. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  3 Move   108. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  4 Move   109. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  5 Move   110. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  6 Move   110. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  7 Move   111. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  8 Move   113. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt;  9 Move   114. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt; 10 Move   115. 1047. &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;  2021-01-10 14:45:47</span>
+<span class="co">#&gt; # … with 14,241 more rows</span></code></pre></div>
+</div>
 </div>
 <div id="visualize-mouse-movement" class="section level3">
 <h3 class="hasAnchor">
 <a href="#visualize-mouse-movement" class="anchor"></a>Visualize mouse movement</h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/visualize_mouse.html">visualize_mouse</a></span><span class="op">(</span><span class="va">mouse_df</span>, type <span class="op">=</span> <span class="st">"dot"</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
+</div>
+<div id="keyboard" class="section level3">
+<h3 class="hasAnchor">
+<a href="#keyboard" class="anchor"></a>Keyboard</h3>
+<div id="keyboard-strokes-tracking" class="section level4">
+<h4 class="hasAnchor">
+<a href="#keyboard-strokes-tracking" class="anchor"></a>Keyboard strokes tracking</h4>
+<p>Equivalent to the way we can track mouse movement, we can track the key strokes in a given time interval:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/marcosci/deviz">deviz</a></span><span class="op">)</span>
+<span class="va">key_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/track_keyboard.html">track_keyboard</a></span><span class="op">(</span><span class="st">"00h00m90s"</span><span class="op">)</span></code></pre></div>
+<p>There is also the possibility to run this command as an RStudio Job.</p>
+</div>
+</div>
+<div id="visualize-mouse-movement-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#visualize-mouse-movement-1" class="anchor"></a>Visualize mouse movement</h3>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/visualize_keyboard.html">visualize_keyboard</a></span><span class="op">(</span><span class="va">key_df</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
 </div>
 </div>
 <div id="code-of-conduct" class="section level2">
