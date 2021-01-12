@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • devis</title>
+<title>Visualize key tracking data — visualize_keyboard • devis</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Visualize key tracking data — visualize_keyboard" />
+<meta property="og:description" content="Adds a heatmap about how often a key was pressed on keyboard from ggkeyboard" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -123,84 +124,61 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Visualize key tracking data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/marcosci/devis/blob/master/R/visualize_keyboard.R'><code>R/visualize_keyboard.R</code></a></small>
+    <div class="hidden name"><code>visualize_keyboard.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Adds a heatmap about how often a key was pressed on keyboard from <code>ggkeyboard</code></p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>visualize_keyboard</span><span class='op'>(</span>
+  <span class='va'>keys</span>,
+  ggkeyboard <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='va'>tkl</span>,
+  palette <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='fu'>keyboard_palette</span><span class='op'>(</span><span class='st'>"magic"</span><span class='op'>)</span>,
+  colour <span class='op'>=</span> <span class='st'>"#cd5c5c"</span>,
+  size <span class='op'>=</span> <span class='fl'>1</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="calc_dist.html">calc_dist()</a></code> </p>
-        </td>
-        <td><p>calc_dist</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="devis.html">devis</a></code> </p>
-        </td>
-        <td><p>devis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="key_df.html">key_df</a></code> </p>
-        </td>
-        <td><p>Keyboard stroke data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mouse_df.html">mouse_df</a></code> </p>
-        </td>
-        <td><p>Computer mouse movement data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="track_keyboard.html">track_keyboard()</a></code> </p>
-        </td>
-        <td><p>track_keyboard</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="track_mouse.html">track_mouse()</a></code> </p>
-        </td>
-        <td><p>track_mouse</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="visualize_keyboard.html">visualize_keyboard()</a></code> </p>
-        </td>
-        <td><p>Visualize key tracking data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="visualize_mouse.html">visualize_mouse()</a></code> </p>
-        </td>
-        <td><p>track_mouse</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>keys</th>
+      <td><p>Keys to highlight. Key names are available from the <code>key</code> column of the data passed to <code>ggkeyboard</code>.</p></td>
+    </tr>
+    <tr>
+      <th>ggkeyboard</th>
+      <td><p>An input keyboard from <code>ggkeyboard</code>.</p></td>
+    </tr>
+    <tr>
+      <th>colour</th>
+      <td><p>Highlight outline colour.</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>Highlight outline signs.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional options, passed to <code>geom_rect</code>.</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>Highlight fill colour.</p></td>
+    </tr>
     </table>
-  </div>
 
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>visualize_keyboard</span><span class='op'>(</span><span class='va'>key_df</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘ggkeyboard’</span></div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
