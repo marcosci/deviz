@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualize key tracking data — visualize_keyboard • devis</title>
+<title>Visualize key tracking data — visualize_keyboard • deviz</title>
 
 
 <!-- jquery -->
@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">devis</a>
+        <a class="navbar-link" href="../index.html">deviz</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
@@ -108,7 +108,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/marcosci/devis/">
+  <a href="https://github.com/marcosci/deviz/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -127,7 +127,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Visualize key tracking data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/marcosci/devis/blob/master/R/visualize_keyboard.R'><code>R/visualize_keyboard.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/marcosci/deviz/blob/master/R/visualize_keyboard.R'><code>R/visualize_keyboard.R</code></a></small>
     <div class="hidden name"><code>visualize_keyboard.Rd</code></div>
     </div>
 
@@ -137,8 +137,8 @@
 
     <pre class="usage"><span class='fu'>visualize_keyboard</span><span class='op'>(</span>
   <span class='va'>keys</span>,
-  ggkeyboard <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='va'>tkl</span>,
-  palette <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='fu'>keyboard_palette</span><span class='op'>(</span><span class='st'>"magic"</span><span class='op'>)</span>,
+  ggkeyboard <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/ggkeyboard/man/tkl.html'>tkl</a></span>,
+  palette <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggkeyboard/man/keyboard_palette.html'>keyboard_palette</a></span><span class='op'>(</span><span class='st'>"magic"</span><span class='op'>)</span>,
   colour <span class='op'>=</span> <span class='st'>"#cd5c5c"</span>,
   size <span class='op'>=</span> <span class='fl'>1</span>,
   <span class='va'>...</span>
@@ -149,7 +149,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>keys</th>
-      <td><p>Keys to highlight. Key names are available from the <code>key</code> column of the data passed to <code>ggkeyboard</code>.</p></td>
+      <td><p>A data.frame with data tracked by <code><a href='track_keyboard.html'>track_keyboard</a></code></p></td>
+    </tr>
+    <tr>
+      <th>ggkeyboard</th>
+      <td><p>An input keyboard from <code>ggkeyboard</code>.</p></td>
     </tr>
     <tr>
       <th>ggkeyboard</th>
@@ -176,7 +180,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>visualize_keyboard</span><span class='op'>(</span><span class='va'>key_df</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘ggkeyboard’</span></div><div class='input'>
+</div><div class='img'><img src='visualize_keyboard-1.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
