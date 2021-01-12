@@ -16,7 +16,7 @@ mouse track including distance#'
 calc_dist
 }
 \details{
-Calculate euclidean distance between track points
+Calculate distance in pixels between track points
 }
 \examples{
 calc_dist(mouse_track)
