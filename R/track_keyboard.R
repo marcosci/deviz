@@ -17,7 +17,7 @@
 #' track_mouse("0h10m00s", "mouse_position.txt")
 #' }
 track_keyboard <- function(time,
-                        as_job = FALSE) {
+                           as_job = FALSE) {
 
   #### check time format ----
   tm_units <- strsplit(time, '([0-9])')

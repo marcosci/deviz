@@ -33,7 +33,7 @@ deviz wraps the the python package [`pynput`](https://pynput.readthedocs.io/en/l
 
 You can install the development version from [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("marcosci/deviz")
 ```
