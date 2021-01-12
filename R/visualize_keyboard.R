@@ -37,7 +37,18 @@ visualize_keyboard <- function(keys,
     dplyr::group_by(key) %>%
     dplyr::summarise(n = dplyr::n())
 
-  keyboard <- ggkeyboard:::construct_keyboard(ggkeyboard)
+  keyboard <-  ggkeyboard::ggkeyboard(ggkeyboard,
+                                      palette = palette,
+                                      layout = layout,
+                                      font_family = font_family,
+                                      font_size = font_size,
+                                      adjust_text_colour = adjust_text_colour,
+                                      measurements = measurements)
+
+  keyboard <- ggplot2::ggplot_build(keyboard)
+  keyboard <- purrr::map_dfr(keyboard$plot$layers[2:16], function(keyboard_data){
+    keyboard_data$data
+  }) %>% dplyr::distinct()
 
   key_data <- keyboard %>%
     dplyr::filter(key %in% !!keys$key) %>%

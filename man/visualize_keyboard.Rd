@@ -8,7 +8,12 @@ visualize_keyboard(
   keys,
   ggkeyboard = ggkeyboard::tkl,
   palette = ggkeyboard::keyboard_palette("magic"),
-  colour = "#cd5c5c",
+  layout = c("ansi", "iso"),
+  font_family = "Arial Unicode MS",
+  font_size = 3,
+  adjust_text_colour = TRUE,
+  measurements = ggkeyboard::keyboard_measurements("default"),
+  colour = "#e5e1e1",
   size = 1,
   ...
 )
@@ -18,15 +23,23 @@ visualize_keyboard(
 
 \item{ggkeyboard}{An input keyboard from \code{\link{ggkeyboard}}.}
 
-\item{ggkeyboard}{An input keyboard from \code{\link{ggkeyboard}}.}
+\item{palette}{Colour palette. Defaults to \code{keyboard_palette("pastel")}. To use a custom palette, create a vector with the names described in \code{\link{keyboard_palette}}.}
+
+\item{layout}{Keyboard layout - one of "ansi" or "iso". Defaults to "ansi".}
+
+\item{font_family}{Font used. Defaults to "Arial Unicode MS". See the \code{extrafont} package for using fonts in ggplot2.}
+
+\item{font_size}{Base font size. Defaults to 3.}
+
+\item{adjust_text_colour}{Whether to lighten the text colour on dark keys. Defaults to TRUE.}
+
+\item{measurements}{Measurements of various aspects of the keyboard key height and width, gaps between keys and rows, etc. See \code{\link{keyboard_measurements}}.}
 
 \item{colour}{Highlight outline colour.}
 
 \item{size}{Highlight outline signs.}
 
 \item{...}{Additional options, passed to \code{geom_rect}.}
-
-\item{fill}{Highlight fill colour.}
 }
 \description{
 Adds a heatmap about how often a key was pressed on keyboard from \code{\link{ggkeyboard}}
