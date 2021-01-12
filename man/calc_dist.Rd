@@ -4,21 +4,23 @@
 \alias{calc_dist}
 \title{calc_dist}
 \usage{
-calc_dist(file)
+calc_dist(track, cumulative = TRUE)
 }
 \arguments{
-\item{file}{Mouse track containing x any y coordinates#'}
+\item{track}{Mouse track containing x any y coordinates}
+
+\item{cumulative}{Return distance as cumulative sum or not, logical, default is true}
 }
 \value{
-mouse track including distance#'
+mouse track including distance
 }
 \description{
 calc_dist
 }
 \details{
-Calculate distance in pixels between track points
+Calculate distance in pixels between track points that are of type 'Move'.
 }
 \examples{
-calc_dist(mouse_track)
+calc_dist(mouse_df)
 
 }

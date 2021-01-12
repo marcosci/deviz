@@ -6,7 +6,7 @@
 #' @param ggkeyboard An input keyboard from \code{\link{ggkeyboard}}.
 #' @param palette Colour palette. Defaults to \code{keyboard_palette("pastel")}. To use a custom palette, create a vector with the names described in \code{\link{keyboard_palette}}.
 #' @param layout Keyboard layout - one of "ansi" or "iso". Defaults to "ansi".
-#' @param font_family Font used. Defaults to "Arial Unicode MS". See the \code{extrafont} package for using fonts in ggplot2.
+#' @param font_family Font used. Defaults to "Palatino". See the \code{extrafont} package for using fonts in ggplot2.
 #' @param font_size Base font size. Defaults to 3.
 #' @param adjust_text_colour Whether to lighten the text colour on dark keys. Defaults to TRUE.
 #' @param measurements Measurements of various aspects of the keyboard key height and width, gaps between keys and rows, etc. See \code{\link{keyboard_measurements}}.
@@ -23,7 +23,7 @@ visualize_keyboard <- function(keys,
                                ggkeyboard = ggkeyboard::tkl,
                                palette = ggkeyboard::keyboard_palette("magic"),
                                layout = c("ansi", "iso"),
-                               font_family = "Arial Unicode MS",
+                               font_family = "mono",
                                font_size = 3,
                                adjust_text_colour = TRUE,
                                measurements = ggkeyboard::keyboard_measurements("default"),
