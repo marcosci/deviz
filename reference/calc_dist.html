@@ -135,28 +135,45 @@
     <p>calc_dist</p>
     </div>
 
-    <pre class="usage"><span class='fu'>calc_dist</span><span class='op'>(</span><span class='va'>file</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>calc_dist</span><span class='op'>(</span><span class='va'>track</span>, cumulative <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>file</th>
-      <td><p>Mouse track containing x any y coordinates#'</p></td>
+      <th>track</th>
+      <td><p>Mouse track containing x any y coordinates</p></td>
+    </tr>
+    <tr>
+      <th>cumulative</th>
+      <td><p>Return distance as cumulative sum or not, logical, default is true</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>mouse track including distance#'</p>
+    <p>mouse track including distance</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Calculate distance in pixels between track points</p>
+    <p>Calculate distance in pixels between track points that are of type 'Move'.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>calc_dist</span><span class='op'>(</span><span class='va'>mouse_track</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in dplyr::filter(., type == "Move"): object 'mouse_track' not found</span></div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>calc_dist</span><span class='op'>(</span><span class='va'>mouse_df</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 11,299 x 9</span><span>
+#&gt;    type      x     y button pressed dx    dy    date                 dist
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> Move   108. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 0    
+#&gt; </span><span style='color: #555555;'> 2</span><span> Move   108. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 0.294
+#&gt; </span><span style='color: #555555;'> 3</span><span> Move   109. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 0.910
+#&gt; </span><span style='color: #555555;'> 4</span><span> Move   110. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 1.89 
+#&gt; </span><span style='color: #555555;'> 5</span><span> Move   110. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 2.69 
+#&gt; </span><span style='color: #555555;'> 6</span><span> Move   111. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 3.85 
+#&gt; </span><span style='color: #555555;'> 7</span><span> Move   113. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 5.01 
+#&gt; </span><span style='color: #555555;'> 8</span><span> Move   114. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 6.17 
+#&gt; </span><span style='color: #555555;'> 9</span><span> Move   115. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 7.69 
+#&gt; </span><span style='color: #555555;'>10</span><span> Move   117. </span><span style='text-decoration: underline;'>1</span><span>047. </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>      </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    2021-01-10 </span><span style='color: #555555;'>14:45:47</span><span> 9.67 
+#&gt; </span><span style='color: #555555;'># … with 11,289 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
