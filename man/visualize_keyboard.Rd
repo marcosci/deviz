@@ -18,6 +18,8 @@ visualize_keyboard(
 
 \item{ggkeyboard}{An input keyboard from \code{\link{ggkeyboard}}.}
 
+\item{ggkeyboard}{An input keyboard from \code{\link{ggkeyboard}}.}
+
 \item{colour}{Highlight outline colour.}
 
 \item{size}{Highlight outline signs.}
