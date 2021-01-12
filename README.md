@@ -16,7 +16,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 ## Input device tracking and visualization in R
 
-🖱️ + ⌨️ tracking and visualization in R. deviz wraps the the python
+🖱️ + ⌨️   tracking and visualization in R. deviz wraps the the python
 package [`pynput`](https://pynput.readthedocs.io/en/latest/index.html),
 which allows us to collect the mouse movement and keyboard strokes data.
 
