@@ -74,7 +74,7 @@ with mouse.Events() as events:
   if (as_job) {
 
     tmp_rscript <- tempfile(fileext = ".R")
-    cat(paste0("mouse_df <- devis::track_mouse('", time, "')"), file = tmp_rscript)
+    cat(paste0("mouse_df <- deviz::track_mouse('", time, "')"), file = tmp_rscript)
     rstudioapi::jobRunScript(tmp_rscript, exportEnv = "R_GlobalEnv")
 
   }

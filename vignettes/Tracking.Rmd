@@ -14,10 +14,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-If you use RStudio, the most convienent way to track your mouse movement with `devis` is to use the jobs pane. Just create somewhere a file like the following:
+If you use RStudio, the most convienent way to track your mouse movement with `deviz` is to use the jobs pane. Just create somewhere a file like the following:
 
 ```r 
-library(devis)
+library(deviz)
 
 mouse_file <- tempfile(fileext = ".txt")
 track_mouse("00h00m90s", mouse_file)

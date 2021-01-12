@@ -1,9 +1,9 @@
-#' @title devis
+#' @title deviz
 #'
 #' @description
 #' Tracks and visualizes mouse movement data. blablabla
 #'
-#' @name devis
+#' @name deviz
 #' @docType package
 # nocov start
 "_PACKAGE"
@@ -14,6 +14,12 @@ globalVariables(c("x",
                   "r",
                   "s",
                   "id",
-                  "type"))
+                  "type",
+                  "key",
+                  "x_start",
+                  "x_end",
+                  "y_start",
+                  "y_end",
+                  "n"))
 
 # nocov end

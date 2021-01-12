@@ -1,5 +1,5 @@
 Type: Package
-Package: devis
+Package: deviz
 Title: Track and visualize mouse movement
 Version: 0.1.0
 Authors@R:
@@ -36,7 +36,8 @@ Imports:
     reticulate,
     magrittr,
     dplyr,
-    ggnewscale
+    ggnewscale,
+    ggkeyboard
 Remotes:  
     sharlagelfand/ggkeyboard
 Config/reticulate:
@@ -46,5 +47,5 @@ Config/reticulate:
     )
   )
 VignetteBuilder: knitr
-URL: https://github.com/marcosci/devis
-BugReports: https://github.com/marcosci/devis/issues
+URL: https://github.com/marcosci/deviz
+BugReports: https://github.com/marcosci/deviz/issues
