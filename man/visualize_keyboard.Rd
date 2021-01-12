@@ -2,10 +2,11 @@
 % Please edit documentation in R/visualize_keyboard.R
 \name{visualize_keyboard}
 \alias{visualize_keyboard}
-\title{Highlight keys}
+\title{Visualize key tracking data}
 \usage{
 visualize_keyboard(
   keys,
+  ggkeyboard = ggkeyboard::tkl,
   palette = ggkeyboard::keyboard_palette("magic"),
   colour = "#cd5c5c",
   size = 1,
@@ -15,22 +16,20 @@ visualize_keyboard(
 \arguments{
 \item{keys}{Keys to highlight. Key names are available from the \code{key} column of the data passed to \code{ggkeyboard}.}
 
+\item{ggkeyboard}{An input keyboard from \code{\link{ggkeyboard}}.}
+
 \item{colour}{Highlight outline colour.}
 
 \item{size}{Highlight outline signs.}
 
 \item{...}{Additional options, passed to \code{geom_rect}.}
 
-\item{ggkeyboard}{An input keyboard from \code{\link{ggkeyboard}}.}
-
 \item{fill}{Highlight fill colour.}
 }
 \description{
-Draw attention to keys in a \code{ggkeyboard}.
+Adds a heatmap about how often a key was pressed on keyboard from \code{\link{ggkeyboard}}
 }
 \examples{
-\dontrun{
-ggkeyboard(tkl) \%>\%
-  highlight_keys(c("Alt Left", "Shift Left", "M"))
-}
+visualize_keyboard(key_df)
+
 }
