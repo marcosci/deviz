@@ -33,7 +33,7 @@ visualize_keyboard <- function(keys,
 
   layout <- match.arg(layout)
 
-  if(ggkeyboard != mac){
+  if(ggkeyboard != "mac"){
     keys <- keys %>%
       dplyr::mutate(key = dplyr::case_when(key == "SHIFT" ~ "Shift Left",
                                            key == "SHIFT_R" ~ "Shift Right",
