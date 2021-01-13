@@ -17,7 +17,7 @@
 #' @export
 #'
 #' @examples
-#' visualize_keyboard(key_df)
+#' visualize_keyboard(key_df, ggkeyboard = ggkeyboard::mac)
 #'
 visualize_keyboard <- function(keys,
                                ggkeyboard = ggkeyboard::tkl,
@@ -33,7 +33,7 @@ visualize_keyboard <- function(keys,
 
   layout <- match.arg(layout)
 
-  if(ggkeyboard != "mac"){
+  if(ggkeyboard$layout[1] != "mac"){
     keys <- keys %>%
       dplyr::mutate(key = dplyr::case_when(key == "SHIFT" ~ "Shift Left",
                                            key == "SHIFT_R" ~ "Shift Right",
@@ -144,7 +144,8 @@ visualize_keyboard <- function(keys,
                                            key == "~`" ~ "~`",
                                            key == "`" ~ "~`",
                                            key == "\"" ~ "\"\'",
-                                           key == "\'" ~ "\"\'"))
+                                           key == "\'" ~ "\"\'",
+                                           TRUE  ~ key))
   }
 
   keys <- keys %>%

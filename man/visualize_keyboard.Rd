@@ -45,6 +45,6 @@ visualize_keyboard(
 Adds a heatmap about how often a key was pressed on keyboard from \code{\link{ggkeyboard}}
 }
 \examples{
-visualize_keyboard(key_df)
+visualize_keyboard(key_df, ggkeyboard = ggkeyboard::mac)
 
 }
