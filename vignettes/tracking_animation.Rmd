@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 install.packages('devtools')
+devtools::install_github("r-rust/gifski")
 devtools::install_github('thomasp85/gganimate')
 ```
 
