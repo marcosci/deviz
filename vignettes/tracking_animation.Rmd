@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 ## Mouse
 
 ```{r setup}
+install.packages('devtools')
+devtools::install_github('thomasp85/gganimate')
 library(deviz)
 library(gganimate)
 library(ggplot2)
