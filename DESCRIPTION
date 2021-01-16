@@ -39,7 +39,7 @@ Imports:
     ggnewscale,
     ggkeyboard
 Remotes:  
-    sharlagelfand/ggkeyboard
+    sharlagelfand/ggkeyboard,
     thomasp85/gganimate
 Config/reticulate:
   list(
