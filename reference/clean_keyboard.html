@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pipe operator — %&gt;% • deviz</title>
+<title>Clean key tracking data — clean_keyboard • deviz</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Pipe operator — %&gt;%" />
-<meta property="og:description" content="See magrittr::%&amp;gt;% for details." />
+<meta property="og:title" content="Clean key tracking data — clean_keyboard" />
+<meta property="og:description" content="Adds a heatmap about how often a key was pressed on keyboard from track_keyboard" />
 
 
 
@@ -123,19 +123,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Pipe operator</h1>
-    <small class="dont-index">Source: <a href='https://github.com/marcosci/deviz/blob/master/R/utils-pipe.R'><code>R/utils-pipe.R</code></a></small>
-    <div class="hidden name"><code>pipe.Rd</code></div>
+    <h1>Clean key tracking data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/marcosci/deviz/blob/master/R/clean_keyboard.R'><code>R/clean_keyboard.R</code></a></small>
+    <div class="hidden name"><code>clean_keyboard.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>See <code>magrittr::%&gt;%</code> for details.</p>
+    <p>Adds a heatmap about how often a key was pressed on keyboard from <code><a href='track_keyboard.html'>track_keyboard</a></code></p>
     </div>
 
-    <pre class="usage"><span class='va'>lhs</span> <span class='op'>%&gt;%</span> <span class='va'>rhs</span></pre>
+    <pre class="usage"><span class='fu'>clean_keyboard</span><span class='op'>(</span><span class='va'>keys</span>, ggkeyboard <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/ggkeyboard/man/tkl.html'>tkl</a></span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>keys</th>
+      <td><p>A data.frame with data tracked by <code><a href='track_keyboard.html'>track_keyboard</a></code></p></td>
+    </tr>
+    <tr>
+      <th>ggkeyboard</th>
+      <td><p>An input keyboard from <code>ggkeyboard</code>.</p></td>
+    </tr>
+    </table>
 
 
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>clean_keyboard</span><span class='op'>(</span><span class='va'>key_df</span>, ggkeyboard <span class='op'>=</span> <span class='fu'>ggkeyboard</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/ggkeyboard/man/mac.html'>mac</a></span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 429 x 2</span><span>
+#&gt;    key          date               
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>             
+#&gt; </span><span style='color: #555555;'> 1</span><span> Command Left 2021-01-10 </span><span style='color: #555555;'>18:13:09</span><span>
+#&gt; </span><span style='color: #555555;'> 2</span><span> Shift Left   2021-01-10 </span><span style='color: #555555;'>18:13:09</span><span>
+#&gt; </span><span style='color: #555555;'> 3</span><span> N            2021-01-10 </span><span style='color: #555555;'>18:13:09</span><span>
+#&gt; </span><span style='color: #555555;'> 4</span><span> M            2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'> 5</span><span> O            2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'> 6</span><span> U            2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'> 7</span><span> S            2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'> 8</span><span> E            2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'> 9</span><span> Shift Right  2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'>10</span><span> _-           2021-01-10 </span><span style='color: #555555;'>18:13:12</span><span>
+#&gt; </span><span style='color: #555555;'># … with 419 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
