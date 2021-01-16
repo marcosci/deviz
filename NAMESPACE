@@ -2,6 +2,7 @@
 
 export("%>%")
 export(calc_dist)
+export(clean_keyboard)
 export(track_keyboard)
 export(track_mouse)
 export(visualize_keyboard)

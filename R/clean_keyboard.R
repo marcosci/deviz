@@ -1,0 +1,133 @@
+#' Clean key tracking data
+#'
+#' Adds a heatmap about how often a key was pressed on keyboard from \code{\link{track_keyboard}}
+#'
+#' @param keys A data.frame with data tracked by \code{\link{track_keyboard}}
+#' @param ggkeyboard An input keyboard from \code{\link{ggkeyboard}}.
+#'
+#' @export
+#'
+#' @examples
+#' clean_keyboard(key_df, ggkeyboard = ggkeyboard::mac)
+#'
+clean_keyboard <- function(keys,
+                           ggkeyboard = ggkeyboard::tkl) {
+
+  if(ggkeyboard$layout[1] != "mac"){
+    keys <- keys %>%
+      dplyr::mutate(key = dplyr::case_when(key == "SHIFT" ~ "Shift Left",
+                                           key == "SHIFT_R" ~ "Shift Right",
+                                           key == "SPACE" ~ "Spacebar",
+                                           key == "ENTER" ~ "Enter",
+                                           key == "BACKSPACE" ~ "Backspace",
+                                           key == "UP" ~ "Up",
+                                           key == "DOWN" ~ "Down",
+                                           key == "LEFT" ~ "Left",
+                                           key == "RIGHT" ~ "Right",
+                                           key == "ALT" ~ "Alt Left",
+                                           key == "ALT_R" ~ "Alt Left",
+                                           key == "CTRL" ~ "Ctrl Left",
+                                           key == "CTRL_R" ~ "Ctrl Right",
+                                           key == "MENU" ~ "Menu",
+                                           key == "TAB" ~ "TAB",
+                                           key == "ESC" ~ "Esc",
+                                           key == "CAPS_LOCK" ~ "Caps",
+                                           key == "<" ~ "<,",
+                                           key == ">" ~ ">.",
+                                           key == "." ~ ">.",
+                                           key == "," ~ "<,",
+                                           key == "#" ~ "3",
+                                           key == "<24>" ~ "~`",
+                                           key == "+" ~ "+=",
+                                           key == "=" ~ "+=",
+                                           key == "-" ~ "_-",
+                                           key == "_" ~ "_-",
+                                           key == "/" ~ "?/",
+                                           key == "?" ~ "?/",
+                                           key == "{" ~ "{[",
+                                           key == "[" ~ "{[",
+                                           key == "}" ~ "}]",
+                                           key == "]" ~ "}]",
+                                           key == "!" ~ "1",
+                                           key == "@" ~ "2",
+                                           key == "#" ~ "3",
+                                           key == "$" ~ "4",
+                                           key == "%" ~ "5",
+                                           key == "^" ~ "6",
+                                           key == "&" ~ "7",
+                                           key == "*" ~ "8",
+                                           key == "(" ~ "9",
+                                           key == ")" ~ "0",
+                                           key == "|" ~ "|\\",
+                                           key == "\\" ~ "|\\",
+                                           key == "~`" ~ "~`",
+                                           key == "`" ~ "~`",
+                                           key == "\"" ~ "\"\'",
+                                           key == "\'" ~ "\"\'",
+                                           key == "DEL" ~ "Del",
+                                           key == "END" ~ "End",
+                                           key == "PGDN" ~ "PgDn",
+                                           key == "INS" ~ "Ins",
+                                           key == "HOME" ~ "Home",
+                                           key == "PGUP" ~ "PgUp",
+                                           key == "PRINT" ~ "Print",
+                                           key == "SCROLL" ~ "Scroll",
+                                           key == "PAUSE" ~ "Pause"))
+  } else {
+    keys <- keys %>%
+      dplyr::mutate(key = dplyr::case_when(key == "SHIFT" ~ "Shift Left",
+                                           key == "SHIFT_R" ~ "Shift Right",
+                                           key == "CMD_R" ~ "Command Right",
+                                           key == "CMD" ~ "Command Left",
+                                           key == "SPACE" ~ "Spacebar",
+                                           key == "ENTER" ~ "Enter",
+                                           key == "BACKSPACE" ~ "Backspace",
+                                           key == "UP" ~ "UpDown",
+                                           key == "DOWN" ~ "UpDown",
+                                           key == "LEFT" ~ "Left",
+                                           key == "RIGHT" ~ "Right",
+                                           key == "ALT" ~ "Option Left",
+                                           key == "CTRL" ~ "Ctrl",
+                                           key == "FN" ~ "Fn",
+                                           key == "TAB" ~ "TAB",
+                                           key == "<10>" ~ "~`",
+                                           key == "ESC" ~ "Esc",
+                                           key == "CAPS_LOCK" ~ "Caps",
+                                           key == "<" ~ "<,",
+                                           key == ">" ~ ">.",
+                                           key == "." ~ ">.",
+                                           key == "," ~ "<,",
+                                           key == "#" ~ "3",
+                                           key == "<24>" ~ "~`",
+                                           key == "+" ~ "+=",
+                                           key == "=" ~ "+=",
+                                           key == "-" ~ "_-",
+                                           key == "_" ~ "_-",
+                                           key == "/" ~ "?/",
+                                           key == "?" ~ "?/",
+                                           key == "{" ~ "{[",
+                                           key == "[" ~ "{[",
+                                           key == "}" ~ "}]",
+                                           key == "]" ~ "}]",
+                                           key == "!" ~ "1",
+                                           key == "@" ~ "2",
+                                           key == "#" ~ "3",
+                                           key == "$" ~ "4",
+                                           key == "%" ~ "5",
+                                           key == "^" ~ "6",
+                                           key == "&" ~ "7",
+                                           key == "*" ~ "8",
+                                           key == "(" ~ "9",
+                                           key == ")" ~ "0",
+                                           key == "|" ~ "|\\",
+                                           key == "\\" ~ "|\\",
+                                           key == "~`" ~ "~`",
+                                           key == "`" ~ "~`",
+                                           key == "\"" ~ "\"\'",
+                                           key == "\'" ~ "\"\'",
+                                           TRUE  ~ key))
+  }
+
+  keys
+
+}
